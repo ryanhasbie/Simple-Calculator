@@ -30,13 +30,53 @@
         android:hint="Enter number 2"
         android:inputType="number"
         />
+    
+    <RadioGroup
+        android:id="@+id/radio_operators"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edit_number2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radio_addition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textStyle="bold"
+            />
+        <RadioButton
+            android:id="@+id/radio_subtraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textStyle="bold"
+            />
+        <RadioButton
+            android:id="@+id/radio_multiplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x"
+            android:textStyle="bold"
+            />
+        <RadioButton
+            android:id="@+id/radio_division"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textStyle="bold"
+            />
+    </RadioGroup>
 
     <Button
         android:id="@+id/button_calculate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Calculate"
-        app:layout_constraintTop_toBottomOf="@id/edit_number2"
+        app:layout_constraintTop_toBottomOf="@id/radio_operators"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
