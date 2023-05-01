@@ -27,10 +27,17 @@ class MainActivity : AppCompatActivity() {
     private fun buttonCalculateOnClickListener() {
         val buttonCalculate = findViewById<Button>(R.id.button_calculate)
         buttonCalculate.setOnClickListener {
-            val editTextNumber1 = findViewById<EditText>(R.id.edit_number1).text.toString().toInt()
-            val editTextNumber2 = findViewById<EditText>(R.id.edit_number2).text.toString().toInt()
-            val textViewResult = findViewById<TextView>(R.id.text_result)
-            textViewResult.text = calculator(editTextNumber1, editTextNumber2)
+            val editTextNumber1 = findViewById<EditText>(R.id.edit_number1)
+            val editTextNumber2 = findViewById<EditText>(R.id.edit_number2)
+
+            if (editTextNumber1.text.isNullOrEmpty() || editTextNumber2.text.isNullOrEmpty()) {
+                showToast("Input is invalid...")
+            } else {
+                val editTextNumber1Value = editTextNumber1.text.toString().toInt()
+                val editTextNumber2Value = editTextNumber2.text.toString().toInt()
+                val textViewResult = findViewById<TextView>(R.id.text_result)
+                textViewResult.text = calculator(editTextNumber1Value, editTextNumber2Value)
+            }
         }
     }
 
